@@ -9,6 +9,8 @@
 [![Throughput](https://img.shields.io/badge/throughput-14.8M%2B%20ops%2Fsec-blue.svg)](src/)
 [![Memory Model](https://img.shields.io/badge/memory-HexCell%20128B%20Lock--Free-orange.svg)](assets/hexcell_topology.svg)
 [![Python SDK](https://img.shields.io/badge/python%20sdk-pip%20install%20.-blueviolet.svg)](python/)
+[![Silicon Receipt](https://img.shields.io/badge/Silicon_Receipt-VERIFICATION__RECEIPT.md-success.svg)](VERIFICATION_RECEIPT.md)
+[![Raw Verifier](https://img.shields.io/badge/Zero--Install_Harness-standalone__verifier.py-blue.svg)](standalone_verifier.py)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > **Monotonic Trajectory Pre-Order (MTPO)** is the exact mathematical and silicon bedrock of autonomous multi-agent concurrency in **XORAS::OS** and the **UPGP v5.0 Ultra** kernel runtime. It solves the multi-agent state coordination crisis by guaranteeing zero thread locks, sub-2µs p99 latency under total cache line collision, and deterministic 3-Phase Saga rollbacks proved confluent in Z3.
