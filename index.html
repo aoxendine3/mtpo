@@ -238,6 +238,33 @@
     }
     .stat-val { font-weight: 800; }
 
+    /* Architectural Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .gallery-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-card:hover { transform: translateY(-2px); border-color: var(--blue); }
+    .gallery-card img { width: 100%; height: auto; display: block; }
+    .gallery-caption {
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,0.25);
+    }
+    .gallery-caption strong { color: #fff; }
+
     footer {
       border-top: 1px solid var(--border);
       padding-top: 20px;
@@ -250,6 +277,9 @@
 </head>
 <body>
   <div class="container">
+    <div style="margin-bottom: 20px;">
+      <img src="assets/banner_1235x338_center.jpg" alt="MTPO Sovereign Banner" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border);">
+    </div>
     <header>
       <div class="logo-group">
         <h1>MTPO CONCURRENCY ENGINE</h1>
@@ -340,6 +370,53 @@
       <div class="mech-card">
         <h4>4. Non-Blocking Advisories (ν)</h4>
         <p>When a premise is invalidated, runtime pushes advisory signal ($\nu_{i \to j}$) directly into prompt context. Agent executes surgical in-situ repair on its active plan without session restarts.</p>
+      </div>
+    </div>
+
+    <!-- Architectural Blueprint & Silicon Execution Gallery -->
+    <h2 style="font-size:18px; font-weight:800; margin-bottom:16px;">Architectural Blueprint &amp; Silicon Hardware Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="assets/mtpo_concurrency_zero_deadlocks.png" alt="MTPO Concurrency: Zero Deadlocks">
+        <div class="gallery-caption">
+          <strong>Figure 1: MTPO Concurrency — Zero Deadlocks</strong><br>
+          Monotonic trajectory pre-order replacing 2PL lock starvation with rank-ordered snapshot reads.
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/mars_architecture_bare_metal_os.png" alt="MARS Architecture: Bare Metal OS">
+        <div class="gallery-caption">
+          <strong>Figure 2: MARS Architecture — Bare Metal OS</strong><br>
+          Apple Silicon M4 hardware memory alignment with 18,432-D Poincaré hyperbolic manifold.
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/race_condition_solved_in_silicon.png" alt="Race Condition Solved in Silicon">
+        <div class="gallery-caption">
+          <strong>Figure 3: Race Conditions Solved in Silicon</strong><br>
+          Hardware atomic compare-exchange and deterministic 3-phase undo eliminating race states.
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/zero_trust_12us_memory.png" alt="Zero Trust 12µs Hardware Memory">
+        <div class="gallery-caption">
+          <strong>Figure 4: Zero Trust 12µs Hardware Memory</strong><br>
+          12.8 µs deterministic rollback recovery versus 1,140 ms legacy LLM prompt-retry loops.
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/state_crash_split_brain_fix.png" alt="State Crash: Split-Brain Fix">
+        <div class="gallery-caption">
+          <strong>Figure 5: State Crash — Split-Brain In-Situ Fix</strong><br>
+          Non-blocking advisory queue ($\nu$) pushing in-situ self-healing repairs with zero token discard.
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/context_drift_the_hardware_fix.png" alt="Context Drift: The Hardware Fix">
+        <div class="gallery-caption">
+          <strong>Figure 6: Context Drift — The Hardware Fix</strong><br>
+          Mechanical invariant gates promoting candidate taint [0xDEAD] to decision taint [0xBEAF].
+        </div>
       </div>
     </div>
 
