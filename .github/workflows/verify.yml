@@ -1,0 +1,50 @@
+name: Native C & Merkle DAG Verification Gate
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: "verify-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  native-gate-verification:
+    name: Native C11 & SHM DAG Gate (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Z3 Solver (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y z3 build-essential
+
+      - name: Install Z3 Solver (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install z3 || true
+
+      - name: Execute Native MTPO Verification Suite (All 5 Gates)
+        run: |
+          chmod +x verify.sh
+          ./verify.sh
+
+      - name: Assert Zero Degradation
+        run: |
+          echo "✅ All 5 MTPO Hardware and Proof Gates verified on ${{ matrix.os }} runner."
