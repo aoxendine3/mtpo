@@ -19,7 +19,7 @@
 #include <stddef.h>
 
 #define HEXCELL_SLOTS 6
-#define CACHE_LINE_SIZE 64
+#define CACHE_LINE_SIZE 128
 
 typedef enum {
     SAGA_IDLE = 0,

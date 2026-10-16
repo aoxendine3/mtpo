@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtpo"
+version = "5.0.0"
+description = "Monotonic Trajectory Pre-Order: High-Throughput Lock-Free Multi-Agent Concurrency & 3-Phase Saga Engine"
+readme = "README.md"
+authors = [
+    { name = "Anthony Oxendine & The Lead 9 Council", email = "dev@xoras.systems" }
+]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: C",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+keywords = ["multi-agent", "concurrency", "lock-free", "saga", "formal-verification", "z3", "lean4", "mtpo"]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://aoxendine3.github.io/mtpo/"
+Repository = "https://github.com/aoxendine3/mtpo"
+"Bug Tracker" = "https://github.com/aoxendine3/mtpo/issues"
+Documentation = "https://aoxendine3.github.io/mtpo/"
