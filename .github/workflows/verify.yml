@@ -40,11 +40,11 @@ jobs:
         run: |
           brew install z3 || true
 
-      - name: Execute Native MTPO Verification Suite (All 5 Gates)
+      - name: Execute Native MTPO Verification Suite (All 6 Gates)
         run: |
           chmod +x verify.sh
           ./verify.sh
 
       - name: Assert Zero Degradation
         run: |
-          echo "✅ All 5 MTPO Hardware and Proof Gates verified on ${{ matrix.os }} runner."
+          echo "✅ All 6 MTPO Hardware, Proof, and Poincaré Gates verified on ${{ matrix.os }} runner."

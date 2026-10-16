@@ -25,9 +25,12 @@ else
     echo "  [INFO] z3 not detected in PATH. Skipping raw SMT solver check."
 fi
 
-echo "\n[5/5] Running Python SDK & Multi-Agent Tests..."
+echo "\n[5/6] Running Python SDK & Multi-Agent Tests..."
 PYTHONPATH=python python3 -m unittest discover -s tests -v
 
+echo "\n[6/6] Running Poincaré Geodesic Invariant Gate & Poison Replay Falsification..."
+python3 standalone_poincare_falsification.py
+
 echo "\n=========================================================="
-echo "  MTPO VERIFICATION COMPLETE: ALL 5 GATES GREEN           "
+echo "  MTPO VERIFICATION COMPLETE: ALL 6 GATES GREEN           "
 echo "=========================================================="
